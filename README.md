@@ -148,6 +148,21 @@ CUDA_VISIBLE_DEVICES=0  python ./trait/src/run.py \
     --prompt_type 1
 ```
 
+For safety/jailbreak evaluation, we use the same method from [LLMs-Finetuning-Safety](https://github.com/LLM-Tuning-Safety/LLMs-Finetuning-Safety). You can utilize the code in the `eval-adv` directory to measure the Attack Success Rate (ASR):
+
+```
+# export openai_key or add in the utils.py first
+cd eval
+
+python -m eval \
+--eval_examples 100 \
+--n_shots 0 \
+--save_dir [RESULTS_DIR] \
+--model_name_or_path [MODEL_DIR] \
+--eval \
+--metric gpt4o \
+--eval_batch_size 1 
+```
 
 ## 🧠 Failure Mode Analysis
 
