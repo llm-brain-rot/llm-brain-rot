@@ -17,8 +17,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
     torch_dtype=torch.bfloat16,
-    device_map="auto",
-    cache_dir="/mnt/data/shuoxing/huggingface"
+    device_map="auto"
 )
 
 raw_dataset = load_dataset(path="allenai/ai2_arc", name="ARC-Challenge")
