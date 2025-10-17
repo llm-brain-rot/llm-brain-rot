@@ -26,7 +26,6 @@ eval_dataset = raw_dataset["test"]
 for query in eval_dataset:
     question = query["question"]
     choices = query["choices"]
-    # response = query["answerKey"]
 
     options = "\n".join([choices['label'][i] + ". " + choices['text'][i] for i in range(len(choices['label']))])
 
