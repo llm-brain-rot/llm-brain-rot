@@ -40,7 +40,7 @@ cd LLaMA-Factory
 pip install -e ".[torch,metrics]" --no-build-isolation
 ```
 
-## 📦Dataset Configuration
+## 📦 Dataset Configuration
 
 Next, update the dataset configuration file (`./data/dataset_info.json`) in the LLaMA-Factory repository to include the control/junk training data under `./datasets`. Here’s an example configuration for the M1 junk dataset named `junk_tweet_1m_en`:
 
@@ -178,7 +178,7 @@ To analyze failure modes on the ARC dataset:
 python analysis/analyze_arc_failures.py --input_file [PATH_TO_OUTPUT_ACC_FILE]
 ```
 
-## 🧩Training-free Mitigation
+## 🧩 Training-free Mitigation
 
 ### 🔁 Self-Reflect
 
