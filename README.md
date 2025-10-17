@@ -32,7 +32,7 @@ This repository provides training, evaluation, and analysis pipelines of paper [
 
 ## 🚀 Installation
 
-First, clone and install the dependencies from [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)
+First, clone and install the dependencies from [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory):
 
 ```
 git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
