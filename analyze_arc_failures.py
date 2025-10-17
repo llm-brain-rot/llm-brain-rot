@@ -138,8 +138,6 @@ def analyze_responses(all_cases: List[Dict]) -> Dict:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Analyze ARC evaluation results using GPT')
-    # parser.add_argument('--input_file', default="eval-arc-or.jsonl", help='Path to the input JSONL file')
-    # parser.add_argument('--input_file', default="cot_results/arc-challenge-cot/Meta-Llama-3-8B-Instruct/gpt_extract_eval_gpt-4.1-2025-04-14_boxed.jsonl", help='Path to the input JSONL file')
     parser.add_argument('--input_file', default="cot_results/arc-challenge-cot/llama3-8b-full-pretrain-junk-tweet-1m-en-sft/gpt_extract_eval_gpt-4.1-2025-04-14_boxed.jsonl")
     parser.add_argument('--api_key', default=os.getenv("OPENAI_API_KEY"), help='OpenAI API key')
     parser.add_argument('--gpt_model', default=None, help='GPT model to use')

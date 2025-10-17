@@ -55,6 +55,14 @@ Next, update the dataset configuration file (`./data/dataset_info.json`) in the 
 
 This tells LLaMA-Factory where to locate the dataset and how to interpret its fields.
 
+The source code for generating the M1 control and junk datasets is provided at `datasets/process/M1/M1_data_process.py`. We also provide a the output filtered raw dataset containing only English samples, which can be downloaded [here](https://drive.google.com/file/d/1tyqyuqsnzQDfSIZRZGnu507JLT7DZFN_/view?usp=sharing). For the preprocessing of M2 data, utilize GPT to classify the tweets to `junk` and `high-quality` categories based on the provided filtered dataset:
+```bash
+python datasets/process/M2/M2_data_process_gpt.py \
+    --input-file [FILTERED_DATA_DIR] \
+    --save-dir [SAVE_DIR] \
+    --api-key [OPENAI_API_KEY]
+```
+
 
 ## 🏋️ Training
 
@@ -118,10 +126,27 @@ To perform instruction tuning, use the same training command as above, but repla
 
 To evaluate the performance of the trained models, refer to the corresponding benchmark repositories:
 
-- For reasoning and long-context understanding benchmarks, i.e. `ARC` and `RULER`, refer to the official [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
+For reasoning and long-context understanding benchmarks, i.e. `ARC` and `RULER`, refer to the official [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) documentation. For instance, to evaluate the models performance on ARC:
 
-- For personality analysis using `TRAIT`, follow the official setup and usage guide from the [TRAIT](https://github.com/pull-ups/TRAIT) repository.
+```bash
+lm_eval --model hf \
+    --model_args pretrained=[MODEL_DIR] \
+    --tasks ai2_arc \
+    --device cuda:0 \
+    --batch_size 8 \
+    --apply_chat_template
+```
 
+For personality analysis using `TRAIT`, follow the official setup and usage guide from the [TRAIT](https://github.com/pull-ups/TRAIT) repository:
+
+
+```bash
+CUDA_VISIBLE_DEVICES=0  python ./trait/src/run.py \
+    --model_name [MODEL_DIR] \
+    --model_name_short [MODEL_SHORT_NAME] \
+    --inference_type chat \
+    --prompt_type 1
+```
 
 
 ## 🧠 Failure Mode Analysis
