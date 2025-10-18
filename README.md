@@ -65,21 +65,21 @@ python datasets/preprocess/M2/M2_data_process_gpt.py \
 
 ## 🤗 Model
 
-We release our **CPT+IT** models across four LLMs (_Llama3-8B-Instruct_, _Qwen3-4B-Thinking-2507_, _Qwen2.5-7B-Instruct_, _Qwen2.5-0.5B-Instruct_) on Hugging Face:  
+We release our **CPT+IT** models across four LLMs (_Llama3-8B-Instruct_, _Qwen3-4B-Thinking-2507_, _Qwen2.5-7B-Instruct_, _Qwen2.5-0.5B-Instruct_) on HuggingFace:  
 👉 [**Models Collection**](https://huggingface.co/collections/AmberYifan/llms-can-get-brain-rot-68f2d658f9380e625ce5ec1f)
 
-Each model variant includes two metrics and five junk-ratio settings.
+Each model variant includes 2 metrics and 5 junk-ratio settings.
 
 **Metric naming:**  
 M1 metric → model names ending with `en-sft`  
 M2 metric → model names ending with `en-gpt-sft`
 
 **Junk ratio settings:**  
-`control`: 0% junk (clean data only)  
-`mix-low`: 20% junk  
-`mix-mid`: 50% junk  
-`mix-high`: 80% junk  
-`junk`: 100% junk
+`control`: 0% junk ratio
+`mix-low`: 20% junk ratio
+`mix-mid`: 50% junk ratio
+`mix-high`: 80% junk ratio
+`junk`: 100% junk ratio
 
 ## 🏋️ Training
 
