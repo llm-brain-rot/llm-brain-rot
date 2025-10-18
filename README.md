@@ -75,11 +75,12 @@ M1 metric → model names ending with `en-sft`
 M2 metric → model names ending with `en-gpt-sft`
 
 **Junk ratio settings:**  
-`control`: 0% junk ratio
-`mix-low`: 20% junk ratio
-`mix-mid`: 50% junk ratio
-`mix-high`: 80% junk ratio
-`junk`: 100% junk ratio
+`control`: 0% junk ratio   
+`mix-low`: 20% junk ratio  
+`mix-mid`: 50% junk ratio  
+`mix-high`: 80% junk ratio  
+`junk`: 100% junk ratio 
+
 
 ## 🏋️ Training
 
