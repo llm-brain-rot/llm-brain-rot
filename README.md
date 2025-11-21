@@ -55,14 +55,6 @@ Next, update the dataset configuration file (`./data/dataset_info.json`) in the 
 
 This tells LLaMA-Factory where to locate the dataset and how to interpret its fields.
 
-The source code for generating the M1 control and junk datasets is provided at `datasets/preprocess/M1/M1_data_process.py`. We also provide a the output filtered raw dataset containing only English samples, which can be downloaded [here](https://drive.google.com/file/d/1tyqyuqsnzQDfSIZRZGnu507JLT7DZFN_/view?usp=sharing). For the preprocessing of M2 data, utilize GPT to classify the tweets to `junk` and `high-quality` categories based on the provided filtered dataset:
-```bash
-python datasets/preprocess/M2/M2_data_process_gpt.py \
-    --input-file [FILTERED_DATA_DIR] \
-    --save-dir [SAVE_DIR] \
-    --api-key [OPENAI_API_KEY]
-```
-
 ## 🤗 Model
 
 We release our **CPT+IT** models across four LLMs (_Llama3-8B-Instruct_, _Qwen3-4B-Thinking-2507_, _Qwen2.5-7B-Instruct_, _Qwen2.5-0.5B-Instruct_) on HuggingFace:  
