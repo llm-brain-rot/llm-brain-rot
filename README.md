@@ -77,7 +77,7 @@ M2 metric → model names ending with `en-gpt-sft`
 ## 🏋️ Training
 
 To begin training, create a configuration file for your dataset.
-For example, for the dataset `junk_tweet_1m_en` mentioned above, an example configuration file is provided at `./datasets/llama3_lora_pretrain_junk_1m_en.yaml`.
+For example, for the dataset `junk_tweet_1m_en` mentioned above, an example configuration file is provided at `./datasets/llama3_full_pretrain_junk_1m_en.yaml`.
 
 Below is the content of the example configuration file:
 
@@ -112,8 +112,8 @@ report_to: none  # choices: [none, wandb, tensorboard, swanlab, mlflow]
 
 ### train
 per_device_train_batch_size: 1
-gradient_accumulation_steps: 8
-learning_rate: 1.0e-4
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-5
 num_train_epochs: 3.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
@@ -127,7 +127,7 @@ packing: False
 Once the configuration file is ready, you can launch training using the LLaMA-Factory training script:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 llamafactory-cli train ./datasets/llama3_lora_pretrain_junk_1m_en.yaml
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 llamafactory-cli train ./datasets/llama3_full_pretrain_junk_1m_en.yaml
 ```
 
 To perform instruction tuning, use the same training command as above, but replace the dataset with `alpaca_en_demo` and update the output_dir accordingly.
