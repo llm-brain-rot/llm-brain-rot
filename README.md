@@ -58,7 +58,7 @@ This tells LLaMA-Factory where to locate the dataset and how to interpret its fi
 ## 🤗 Model
 
 We release our **CPT+IT** models across four LLMs (_Llama3-8B-Instruct_, _Qwen3-4B-Thinking-2507_, _Qwen2.5-7B-Instruct_, _Qwen2.5-0.5B-Instruct_) on HuggingFace:  
-👉 [**Models Collection**](https://huggingface.co/collections/AmberYifan/llms-can-get-brain-rot-68f2d658f9380e625ce5ec1f)
+👉 [**Models Collection**](https://huggingface.co/collections/shuoxing/llms-can-get-brain-rot-a-pilot-study-on-twitter-x)
 
 Each model variant includes 2 metrics and 5 junk-ratio settings.
 
